@@ -14,24 +14,34 @@
     <!-- VueJs -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- Script -->
-    <!-- <script defer src="js/script.js"></script> -->
-    <script src="js/data.js"></script>
-    <script defer src="js/vue.js"></script>
+    <script defer src="js/script.js"></script>
+    <!-- <script src="js/data.js"></script> -->
+    <!-- <script defer src="js/vue.js"></script> -->
 </head>
 <body>      
     <div id="root" class="container d-flex direction-column align-items-center my-4">
 
         <button id="prev-button" class="border-0 bg-transparent">
-            <i v-ifclass="bi bi-arrow-left-square-fill btn"></i>
+            <i class="bi bi-arrow-left-square-fill btn"></i>
         </button>
         
         <div class="container-images d-flex justify-content-center align-items-center">
             
             <!-- CAROUSEL  -->
-            <div id="carousel"></div> 
+            <div id="carousel">
+                <div class="gallery my-4">
+                    <img src="img/01.webp" alt="webp"> 
+                    <div class="text text-white text-end px-5">
+                      <h2>Marvel's Spiderman Miles Morale</h2>
+                      <h4>Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man. </h4> 
+                    </div>   
+                </div>
+            </div> 
             
             <!-- THUMB  -->
-            <div id="thumb"></div>
+            <div id="thumb">
+                <img src="img/01.webp" alt="webp" class="actived">
+            </div>
         
         </div>
         
