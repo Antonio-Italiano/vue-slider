@@ -1,5 +1,5 @@
 
-const data = [
+const database = [
   {
     image: 'img/01.webp',
     title: 'Marvel\'s Spiderman Miles Morale',

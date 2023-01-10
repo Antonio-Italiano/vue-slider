@@ -9,13 +9,6 @@ img{
 
 
 /* CAROUSEL */
-#carousel .gallery{
-    display: none;
-} 
-
-#carousel .gallery.active{
-    display: block;
-}
 
 #carousel .gallery img{
     height: 100%;

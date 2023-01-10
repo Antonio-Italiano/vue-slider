@@ -14,14 +14,14 @@
     <!-- VueJs -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- Script -->
-    <script defer src="js/script.js"></script>
-    <!-- <script src="js/data.js"></script> -->
-    <!-- <script defer src="js/vue.js"></script> -->
+    <!-- <script defer src="js/script.js"></script> -->
+    <script src="js/data.js"></script>
+    <script defer src="js/vue.js"></script>
 </head>
 <body>      
     <div id="root" class="container d-flex direction-column align-items-center my-4">
 
-        <button id="prev-button" class="border-0 bg-transparent">
+        <button id="prev-button" class="border-0 bg-transparent" @click="goTo('prev')">
             <i class="bi bi-arrow-left-square-fill btn"></i>
         </button>
         
@@ -29,23 +29,23 @@
             
             <!-- CAROUSEL  -->
             <div id="carousel">
-                <div class="gallery my-4">
-                    <img src="img/01.webp" alt="webp"> 
+                <div v-for="(d, i) in database" class="gallery my-4" v-show="i === currentIndex">
+                    <img :src="d.image" :alt="d.title"> 
                     <div class="text text-white text-end px-5">
-                      <h2>Marvel's Spiderman Miles Morale</h2>
-                      <h4>Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man. </h4> 
+                      <h2>{{ d.title }}</h2>
+                      <h4>{{ d.text }}</h4> 
                     </div>   
                 </div>
             </div> 
             
             <!-- THUMB  -->
             <div id="thumb">
-                <img src="img/01.webp" alt="webp" class="actived">
+                <img v-for="(d, i) in database" :src="d.image" :alt="d.title" :class="{'active': i === currentIndex}">
             </div>
         
         </div>
         
-        <button id="next-button" class="border-0 bg-transparent">
+        <button id="next-button" class="border-0 bg-transparent" @click="goTo('next')">
             <i class="bi bi-arrow-right-square-fill btn"></i>
         </button>
     
