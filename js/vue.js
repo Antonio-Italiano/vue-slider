@@ -20,18 +20,25 @@ const app = Vue.createApp({
             database,            
         }
     },
+    computed: {
+        lastElement() {
+            return this.database.length -1
+        }
+    },
     methods: {
         goTo(target) {
             if(target === 'next'){
                 this.currentIndex++;
-                if( this.currentIndex >= this.database.length) {
+                if( this.currentIndex > this.lastElement) {
                     this.currentIndex = 0;
                 }
-            } else {
+            } else if (target === 'prev'){
                 this.currentIndex--;
                 if( this.currentIndex < 0) {
-                    this.currentIndex = this.database.length -1;
+                    this.currentIndex = this.lastElement;
                 }
+            } else {
+                this.currentIndex = target;
             }
         }
     }
