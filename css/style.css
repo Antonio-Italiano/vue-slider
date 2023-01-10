@@ -1,0 +1,64 @@
+/* GENERICS */
+img{
+    width: 100%;
+    display: block;
+    border-radius: 2px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+
+/* CAROUSEL */
+#carousel .gallery{
+    display: none;
+} 
+
+#carousel .gallery.active{
+    display: block;
+}
+
+#carousel .gallery img{
+    height: 100%;
+}
+
+.text{
+    position: absolute;
+    right: 0;
+    bottom: 50px;
+    text-shadow: 2px 2px black;
+}
+
+.gallery{
+    height: 500px;
+    width: 60vw;
+    position: relative;
+    border: 10px solid rgba(0, 0, 0, 0.621);
+    background-color: rgba(0, 0, 0, 0.621);
+}
+
+
+/* THUMB */
+#thumb{
+    width: 15vw;
+    height: 500px;
+}
+
+#thumb img.active{
+    border: 5px solid #84fe84;  
+}
+
+#thumb img{
+    height: 20%;
+}
+
+#thumb img:hover{
+    border: 5px solid #84fe84;
+}
+
+
+/* Button */
+.btn {
+    cursor: pointer;
+    font-size: 40px;
+    color: rgb(111, 255, 59);
+}
