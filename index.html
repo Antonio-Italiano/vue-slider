@@ -40,7 +40,7 @@
             
             <!-- THUMB  -->
             <div id="thumb">
-                <img v-for="(d, i) in database" :src="d.image" :alt="d.title" :class="{'active': i === currentIndex}" @click="goTo(i)">
+                <img v-for="(d, i) in database" :src="d.image" :alt="d.title" :class="{'active': i === currentIndex}" @click="goTo(i)" @load="auto">
             </div>
         
         </div>
