@@ -29,7 +29,7 @@
             
             <!-- CAROUSEL  -->
             <div id="carousel">
-                <div v-for="(d, i) in database" class="gallery my-4" v-show="i === currentIndex">
+                <div v-for="(d, i) in database" class="gallery my-4" v-show="i === currentIndex" @mouseenter="stop" @mouseleave="auto">
                     <img :src="d.image" :alt="d.title"> 
                     <div class="text text-white text-end px-5">
                       <h2>{{ d.title }}</h2>
@@ -40,7 +40,7 @@
             
             <!-- THUMB  -->
             <div id="thumb">
-                <img v-for="(d, i) in database" :src="d.image" :alt="d.title" :class="{'active': i === currentIndex}" @click="goTo(i)" @load="auto">
+                <img v-for="(d, i) in database" :src="d.image" :alt="d.title" :class="{'active': i === currentIndex}" @click="goTo(i)">
             </div>
         
         </div>

@@ -17,24 +17,14 @@ const app = Vue.createApp({
     data() {
         return {
             currentIndex: 0,
-            database,            
+            database,
+            autoPlay: false,            
         }
     },
     computed: {
         lastElement() {
             return this.database.length -1
         },    
-        auto() {
-            setInterval(() => {
-                this.currentIndex++;
-                if( this.currentIndex > this.lastElement) {
-                    this.currentIndex = 0;
-                }
-            }, 3000);            
-        },
-        hover(target) {
-            this.currentIndex = target;
-        }   
     },
     methods: {
         goTo(target) {
@@ -51,10 +41,19 @@ const app = Vue.createApp({
             } else {
                 this.currentIndex = target;
             }
-            
-            
-            
+        },
+        auto() {
+            this.autoPlay = setInterval(() => {
+                this.goTo('next')
+            }, 3000);            
+        },   
+        stop() {
+            clearInterval(this.autoPlay)
         }
+        
+    },
+    mounted() {
+        this.auto();
     }
 });
 
